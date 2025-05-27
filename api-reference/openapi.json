@@ -129,7 +129,7 @@
                             ]
                           },
                           "logprobs": {
-                            "type": "null"
+                            "type": "string"
                           },
                           "finish_reason": {
                             "type": "string"
@@ -178,7 +178,7 @@
         ]
       }
     },
-    "/v1/embeddings": {
+    "/bge/embeddings": {
       "post": {
         "summary": "Embeddings",
         "deprecated": false,
@@ -1300,7 +1300,7 @@
         ]
       }
     },
-    "/v1/rerank": {
+    "/bge/rerank": {
       "post": {
         "summary": "Rerank",
         "deprecated": false,
@@ -1355,6 +1355,92 @@
                 ],
                 "return_documents": true,
                 "model": "BAAI/bge-reranker-large"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "object": "rerank",
+                  "results": [
+                    {
+                      "relevance_score": 0.97314453125,
+                      "index": 0,
+                      "document": "Munich is in Germany."
+                    },
+                    {
+                      "relevance_score": 0.00027179718017578125,
+                      "index": 1,
+                      "document": "The sky is blue."
+                    }
+                  ],
+                  "model": "BAAI/bge-reranker-large",
+                  "usage": {
+                    "prompt_tokens": 69,
+                    "total_tokens": 69
+                  },
+                  "id": "infinity-396547b8-7bdd-4f68-ad52-98b63717df83",
+                  "created": 1725269976
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/flux/generate": {
+      "post": {
+        "summary": "Flux",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "prompt": {
+                    "type": "string"
+                  },
+                  "seed": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "prompt",
+                  "seed"
+                ]
+              },
+              "example": {
+                "prompt": "一只小猫猫",
+                "seed": 0
               }
             }
           }
