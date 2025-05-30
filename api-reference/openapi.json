@@ -1455,26 +1455,7 @@
                   "properties": {}
                 },
                 "example": {
-                  "object": "rerank",
-                  "results": [
-                    {
-                      "relevance_score": 0.97314453125,
-                      "index": 0,
-                      "document": "Munich is in Germany."
-                    },
-                    {
-                      "relevance_score": 0.00027179718017578125,
-                      "index": 1,
-                      "document": "The sky is blue."
-                    }
-                  ],
-                  "model": "BAAI/bge-reranker-large",
-                  "usage": {
-                    "prompt_tokens": 69,
-                    "total_tokens": 69
-                  },
-                  "id": "infinity-396547b8-7bdd-4f68-ad52-98b63717df83",
-                  "created": 1725269976
+                  
                 }
               }
             },
