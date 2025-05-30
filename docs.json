@@ -14,7 +14,7 @@
         "tab": "API 文档",
         "groups": [
           {
-            "group": "Endpoint Examples",
+            "group": "API 文档",
             "pages": [
               "api-reference/endpoint/chat",
               "api-reference/endpoint/embeddings",
